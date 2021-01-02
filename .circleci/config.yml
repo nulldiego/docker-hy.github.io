@@ -25,6 +25,5 @@ jobs:
       - run:
           name: Push to Heroku
           command: |
-            heroku container:login
             docker push registry.heroku.com/docker-hy-diegosl/web
             heroku container:release web -a docker-hy-diegosl  
