@@ -23,6 +23,9 @@ jobs:
             docker pull $DOCKER_LOGIN/docker-hy
             docker tag $DOCKER_LOGIN/docker-hy registry.heroku.com/docker-hy-diegosl/web
       - run:
+          name: Update Heroku CLI
+          command: curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
           name: Push to Heroku
           command: |
             docker login -u $HEROKU_LOGIN -p $HEROKU_API_KEY registry.heroku.com
